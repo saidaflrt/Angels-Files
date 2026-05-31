@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* fonts used for this website */
+        @font-face {
+            font-family: font;
+            src: url(font/Sora-Bold.ttf);
+        }
+        @font-face {
+            font-family: font1;
+            src: url(font/Sora-Light.ttf);
+        }
+        @font-face {
+            font-family: font2;
+            src: url(font/Sora-Regular.ttf);
+        }
+
+        /* background is designed with half of green and beige  */
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(
+                to bottom,
+                #4d8d7d 0%, 
+                #4d8d7d 50%, 
+                #f5f5dc 50%, 
+                #f5f5dc 100%
+            );
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+        
+        /* gives a fade in effect when starting up the website */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* container for all of the elements present */
+        .whole{
+            align-items: center;
+            display: flex;
+            justify-content:center;     
+            height: 100vh;
+            flex-direction: column;
+        }
+        /* container for the logo, brief introduction, and for viewer's inquiry */
+        .brief{
+            align-items: left;
+            display: flex;
+            justify-content:flex-start;
+            flex-direction: row;
+            gap: 20px;
+            padding: 0;
+            position: relative;
+        }
+
+        #logo {
+            display: flex;
+            list-style: none;
+            flex-direction: row;
+            margin: 0;
+            position: relative; 
+            top: 45px;
+            left: 35px;
+        } 
+
+        /* general format for elements in the brief container */
+        .elements{
+            color: beige;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* elements in the brief container */
+        h1.elements{
+            margin: 70px;
+            font-family: font;
+        }
+        p.elements{
+            font-family: font1;
+            text-indent: 10px;
+            text-align: justify;
+        }
+        #desc{
+            margin: 150px;
+            text-align: justify;
+            position: relative;
+            right: 355px;
+            top: 20px;
+            font-size: 20px;
+        }
+        .add {
+            width: 260px;                
+            height: auto;
+            padding: 25px 15px;         
+            background-color: beige;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: absolute;          
+            right: 100px;                 
+            bottom: 210px;                     
+        }
+        #ad {
+            font-size: 20px;
+            margin: 0 0 10px 0;          
+            text-align: center;
+            white-space: normal; 
+            font-family: font;       
+        }
+        .text{
+            color: #4d8d7d;
+            font-family: font1;
+        }
+        /*                            */
+        
+        /* container for the unordered list for the available programs */
+        .cont{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            gap: 8px;
+            padding: 0; 
+        }
+
+        /* unordered list containing the available programs */
+        .progs {
+            display: flex;
+            list-style: none;
+            flex-direction: row;
+            gap:100px;
+            position: relative;
+            right: 20px;
+            bottom: 50px;
+            font-family: font2;
+        }
+
+        /* individual container for each program presented */
+        .cont1{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #4d8d7d;
+            color: beige;
+            border-radius: 5px;
+            width: 350px;
+            height: 300px;
+            transition: transform 0.2s ease;
+        }
+
+        /* adds effect of emphasizing the divs when hovered */
+        .cont1:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        /* gives the pictures' top border a rounded look */
+        .cont1 img{
+            overflow: hidden;
+            border-style: none;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        /* adds an opacity effect to the picture when hovered */
+        .cont1 img:hover{
+             opacity: 0.5;
+        }
+
+        /* format for the website to respond on a standard phone */
+        @media (max-width: 768px) {
+            body {
+                background: #f5f5dc;
+                overflow-y: auto;
+            }
+            .brief {
+                background-color: #4d8d7d;
+                width: 100%;
+                padding-bottom: 24px;
+            }
+            .whole {
+                justify-content: flex-start;
+                padding-bottom: 40px;
+            }
+            .brief {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 16px 0;
+                gap: 0;
+            }
+            #logo {
+                position: static;
+                width: 120px;
+                height: 120px;
+                margin: 20px auto 0;
+            }
+            h1.elements {
+                margin: 12px 0 0;
+                font-size: 28px;
+                text-align: center;
+            }
+            #desc {
+                position: static;
+                margin: 12px 16px;
+                font-size: 14px;
+                right: auto;
+                top: auto;
+                text-align: justify;
+                color: beige;
+            }
+            .add {
+                position: static;
+                width: calc(100% - 32px);
+                max-width: 340px;
+                margin: 16px auto 24px;
+                padding: 16px;
+            }
+            #ad {
+                font-size: 16px;
+            }
+            .cont {
+                width: 100%;
+                padding: 0 16px;
+            }
+            .progs {
+                flex-direction: column;
+                gap: 20px;
+                right: auto;
+                top: 35px;
+                align-items: center;
+                padding: 0 0 40px;
+                width: 100%;
+            }
+            .progs li {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            .cont1 {
+                width: 100%;
+                max-width: 360px;
+                height: auto;
+                transition: transform 0.2s ease;
+            }
+            .cont1 img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+            .cont1 h3 {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+            .cont1:hover {
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class = "whole">
+        <div class = "brief">
+            <img id = "logo" src = "images/logo circle.png" width="350" height="350"> 
+            <h1 class = "elements" id = "name">Angels' Files</h1>
+            <p class = "elements" id = "desc">
+                Here in Angels’ Files, located are some of the associations and organizations established around Manila who are in need of help. 
+                Such communities like orphanages, animal shelters, and home for the elderly, and more to come communities can be found through these files. 
+                Great Souls may navigate through these files to find communities they’re willing to lend their hands to.
+            </p>
+            <div class = "add">
+                <h1 class = "text" id = "ad">Add your community to the list?</h1>
+                <a class = "text" id = "email" href = "mailto:angelsfiles@gmail.com" target="_self">Email us!</a>
+            </div>
+        </div>
+        <div class = "cont">
+            <ul class = "progs">
+                <li>
+                    <div id = "bahay" class = "cont1">
+                        <img src = "images/pic1.png" width="350" height="250">
+                        <h3>Orphanages</h3>
+                    </div>
+                </li>
+                <li>
+                    <div id = "animal" class = "cont1">
+                        <img src = "images/pic2.png" width="350" height="250">
+                        <h3>Animal Shelters</h3>
+                    </div>
+                </li>
+                <li>
+                    <div id = "elderly" class = "cont1">
+                        <img src = "images/pic5.png" width="350" height="250">
+                        <h3>Home for the Elderly</h3>
+                    </div>
+                </li>
+            </ul>
+        </div> 
+
+        <script>
+        /* manages the navigation of users to view available communities in selected program */
+        
+        const bahay = document.getElementById('bahay');
+        bahay.addEventListener('click', function(){
+            window.location.href = "bahayamp.html"
+        });
+
+        const animal = document.getElementById('animal');
+        animal.addEventListener('click', function(){                       
+            window.location.href = "animal.html"                              
+        });
+
+        const elderly = document.getElementById('elderly');
+        elderly.addEventListener('click', function(){
+            window.location.href = "elderly.html"
+        });
+    </script>
+    </div>
+</body>
+</html>

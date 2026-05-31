@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* fonts used for this website */
+        @font-face {
+            font-family: font;
+            src: url(font/Sora-Bold.ttf);
+        }
+        @font-face {
+            font-family: font1;
+            src: url(font/Sora-Light.ttf);
+        }
+        @font-face {
+            font-family: font2;
+            src: url(font/Sora-Regular.ttf);
+        }
+
+        /*background is designed with a collection of pictures with a faint green color on top */
+        body {
+           background: linear-gradient(rgba(71, 135, 120, 0.7), rgba(71, 135, 120, 0.7)), 
+              url(images/background.png);
+           background-size: cover;
+           background-position: center;        
+           font-family: font;
+           overflow: hidden;
+           animation: fadeIn 2s ease;
+        }
+
+        /* gives a fade in effect when starting up the website */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* container for all elements present */
+        .cont{
+            align-items: center;
+            display: flex;
+            justify-content: center;            
+            min-height: 100vh;
+            flex-direction: column;
+            gap: 8px;
+            padding: 0;
+        }
+        
+         /* general format for all elements */
+        .elements{    
+            color: beige;
+            margin: 0;                         
+            padding: 0;
+            text-align: center;
+        }
+
+        /* elements */
+        #name{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            right: 5px;
+            bottom: 10px;
+            font-size: 50px;
+        }
+        img.elements{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            left: 17px;
+            bottom: 25px;
+        }
+        #tagline{
+            display: flex;                      
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            bottom: 50px;
+            font-size: 20px;
+            font-family: font2;
+        }
+        a.elements{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            color: #4d8d7d;
+            margin: 0 auto;
+            background-color: beige;
+            padding: 5px 15px;
+            border-radius: 3px;
+            text-decoration: none;
+            position: relative;
+            bottom: 45px;
+            font-family: font1;
+            transition: transform 0.2s ease;
+        }   
+        a.elements:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        /*                  */
+
+        /* format for the website to respond on a standard phone */
+       @media (max-width: 768px) {
+            .cont {
+                gap: 25px;
+                padding: 30px 20px;
+            }
+            #name {
+                font-size: 36px;
+            }
+            img.elements {
+                width: 140px;                       
+                height: 140px;
+            }
+            #tagline {
+                font-size: 18px; 
+                padding: 0 15px;
+            }
+            a.elements {
+                padding: 12px 35px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class = "cont">
+    <h1 class = "elements" id = "name">Angels' Files</h1>
+    <img class = "elements" src = "images/logo.png" alt = "Angels' Files" width="200" height="200">
+    <h1 class = "elements" id = "tagline">Great Souls Make Aspring Souls</h1> 
+    <a href = "first.html"class = "elements">Proceed</a>
+</div>
+</body>
+</html>

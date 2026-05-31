@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* fonts used for this website */
+        @font-face {
+            font-family: font;
+            src: url(font/Sora-Bold.ttf);
+        }
+        @font-face {
+            font-family: font1;
+            src: url(font/Sora-Light.ttf);
+        }
+        @font-face {
+            font-family: font2;
+            src: url(font/Sora-Regular.ttf);
+        }
+
+        /* background is designed a gradient of green to beige  */
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(
+                to bottom,
+                #4d8d7d 50%, 
+                #f5f5dc 0%, 
+                #4d8d7d 0%, 
+                #f5f5dc 100%
+            );
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+
+        /* gives a fade in effect when starting up the website */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* container for the elements in the header (title and button) */
+        .header {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            gap:0;
+            padding: 0;
+        }
+
+        /* elements in the header container */
+        .header a{
+            color: #4d8d7d;
+            background-color: beige;
+            padding: 5px 15px;
+            border-radius: 3px;
+            text-decoration: none;
+            position: relative;
+            right: 425px;
+            font-family: font1;
+            transition: transform 0.2s ease;
+        }
+        .header a:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        .header h1 {
+            color: beige;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: 70px;
+            right: 60px;
+            font-family: font;
+        }
+        /*                                   */
+
+        /* unordered list containing the available communities */
+        .oplist{
+            display: flex;
+            list-style: none;
+            flex-direction: row;
+            gap:100px;
+            position: relative;
+            left: 50px;
+            top: 110px;
+        }
+
+        /* individual container for each community presented */
+        .cont1{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: beige;
+            color: #4d8d7d;
+            border-radius: 5px;
+            width: 350px;
+            height: 400px;
+            font-family: font2;
+            font-size: 15px;
+        }
+        .btn {
+            border-radius: 5px;
+            background-color: #4d8d7d;
+            color: beige;
+            width: 250px;
+            height: 30px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            bottom: 10px;
+            transition: transform 0.2s ease;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        #abimg{
+            position: relative;
+            bottom: 19px;
+        }
+        #abbtn {
+            position: relative;
+            top: 7px;
+        }
+
+        /* format for the website to respond on a standard phone */
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                min-height: 100vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+                background: linear-gradient(
+                    to bottom,
+                    #4d8d7d 0%,
+                    #cde8cc 100%
+                );
+            }
+            .header {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 16px 0;
+                gap: 0;
+            }
+            .header a {
+                position: static;
+                align-self: flex-start;
+                margin-bottom: 8px;
+                font-size: 14px;
+            }
+            .header h1 {
+                position: static;
+                font-size: 32px;
+                text-align: center;
+                margin: 12px 0 0;
+            }
+            .oplist {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+                position: static;
+                padding: 24px 16px 40px;
+                width: 100%;
+            }
+            .oplist li {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .cont1 {
+                width: 100%;
+                max-width: 360px;
+                height: auto;
+                padding: 20px 16px;
+            }
+            .cont1 img {
+                width: 100%;
+                max-width: 260px;
+                height: auto;
+            }
+            .cont1 h1 {
+                font-size: 18px;
+                text-align: center;
+                margin: 12px 0 0;
+            }
+            #cssi {
+                position: static;
+            }
+            .cont1:hover {
+                transform: none;
+            }
+            .btn {
+                position: static;
+                width: 80%;
+                max-width: 260px;
+                margin-top: 12px;
+            }
+            #abbtn {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class = "header">
+        <a href = "first.html">Programs</a>
+        <h1>Animal Shelters</h1>
+    </div>
+    <div class = "cont">
+        <ul class = "oplist">
+            <li>
+                <div id = "cara" class = "cont1">
+                    <img src = "images/cara.png" width="300" height="250">
+                    <h1 style="text-align: center">CARA Welfare Philippines</h1>   
+                    <div id = "carabtn" class = "btn">Learn More</div>
+                </div>
+            </li>
+            <li>
+                <div id = "paws" class = "cont1">
+                    <img src = "images/paws.png" width="300" height="250">
+                    <h1 style="text-align: center">PAWS Animal Rehabilitation Center</h1>
+                    <div id = "pawsbtn" class = "btn">Learn More</div>
+                </div>
+            </li>
+            <li>
+                <div id = "ab" class = "cont1">
+                    <img  id = "abimg" src = "images/ab (1).png" width="300" height="250">
+                    <h1 style="text-align: center">Adopt Biyaya</h1>
+                    <div id = "abbtn" class = "btn">Learn More</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        /* manages the navigation of users to view information in selected community */
+        
+        const cara = document.getElementById('carabtn');
+        cara.addEventListener('click', function (){
+            window.location.href = "cara.html";
+        });
+        const paws = document.getElementById('pawsbtn');
+        paws.addEventListener('click', function (){
+            window.location.href = "paws.html";
+        });
+        const ab = document.getElementById('abbtn');
+        ab.addEventListener('click', function (){
+            window.location.href = "ab.html";
+        });
+    </script>
+</body>
+</html>
